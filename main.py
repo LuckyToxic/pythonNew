@@ -72,8 +72,25 @@ decimeters = meters * 10
 
 millimeters = meters * 1000
 
-conv_fac = 62 / 100000
+conv_fac = 62E-5
 
 miles = meters * conv_fac
 
 print('Ваше значение в сантиметрах будет:',centimeters,'\nВ дециметрах :',decimeters,'\nВ миллиметрах :',millimeters,'\nВ милях :',miles)
+
+
+# Задание 4
+
+main_trio = int(input('Введите размер основания триугольника :'))
+
+height_trio = int(input('Введите высоту триугольника :'))
+
+square = main_trio * (height_trio/2)
+
+print('Площаль вашего триугольника будет равна :',square)
+
+
+# Задание 5
+
+
+
