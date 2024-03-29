@@ -126,3 +126,32 @@ if choice == 1 :
     print('Сумма ваших чисел :',numb1+numb2+numb3)
 else :
     print('Произведение ваших чисел :',numb1*numb2*numb3) 
+
+
+# Задание 2
+
+numb1 = int(input('Введите первое число :'))
+
+numb2 = int(input('Введите второе число :'))
+
+numb3 = int(input('Введите третье число :'))
+
+choice = input('Для вывода наибольшего числа введите "a"\nДля вывода наименьшего числа введите "b"\nДля отображения среднеарефметического числа введите "с"\nВведите ваш вариант :')
+
+if choice == 'a' :
+    if numb1<numb2<numb3 :
+        print('Наименьшее число из трех :',numb1)
+    elif numb2<numb3<numb1 :
+        print('Наименьшее число из трех :',numb2)
+    else :    
+        print('Наименьшее число из трех :',numb3)
+elif choice == 'b' :
+    if numb1>numb2>numb3 :
+        print('Наибольшее число из ваших трех :',numb1)
+    elif numb2>numb3>numb1 :
+        print('Наибольшее число из ваших трех :',numb2)
+    else :    
+        print('Наибольшее число из ваших трех :',numb3)
+elif choice == 'c' :
+    print('Среднее арифметическое ваших трех чисел равно :',(numb1+numb2+numb3)//3)      
+            
