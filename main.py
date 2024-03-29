@@ -34,13 +34,12 @@ print('Площадь ромба равна : ',(diagonal1 * diagonal2)//2)
 
 # # Задание 4
 
-print('To be \nor not \nto be')
+print('To be','or not','to be',sep='\n')
 
 
 # # Задание 5
 
-print('"Life is what happens\n   when\n      you\'re busy making other plans"\n                              John Lennon.')
-
+print('"Life is what happens','\twhen','\t\tyou\'re busy making other plans"','\t\t\t\t\tJohn Lennon.',sep='\n')
 
 
 # МОДУЛЬ 1 ЧАСТЬ 3
