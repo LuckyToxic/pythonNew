@@ -170,3 +170,88 @@ elif choice == 'дюймы' :
     print('Количество заданых метров в дюймах будет равна :', meters * 39.3701)
 elif choice == 'ярды' :
     print('Количество заданых метров в ярдах будет равна :', meters * (109361E-5))        
+
+
+# Модуль 2 Часть 2
+# Задание 1
+
+day = input('Введите номер дня недели :')
+
+if day == '1' :
+    print('Ваш день недели - это понедельник!')
+elif day == '2' :
+    print('Ваш день недели - это вторник!')    
+elif day == '3' :
+    print('Ваш день недели - это среда!')    
+elif day == '4' :
+    print('Ваш день недели - это четверг!')    
+elif day == '5' :
+    print('Ваш день недели - это пятница!')    
+elif day == '6' :
+    print('Ваш день недели - это суббота!')    
+elif day == '7' :
+    print('Ваш день недели - это воскресенье!')
+else:
+    print('Дней в недели всего 7,введите число от 1 до 7!') 
+
+
+# Задание 2
+
+mounth = input('Введите номер месяца :')
+
+if mounth == '1' :
+    print('Ваш месяц - это январь!')
+elif mounth == '2' :
+    print('Ваш месяц - это февраль!')
+elif mounth == '3' :
+    print('Ваш месяц - это март!')
+elif mounth == '4' :
+    print('Ваш месяц - это апрель!')
+elif mounth == '5' :
+    print('Ваш месяц - это май!')
+elif mounth == '6' :
+    print('Ваш месяц - это июнь!')
+elif mounth == '7' :
+    print('Ваш месяц - это июль!')
+elif mounth == '8' :
+    print('Ваш месяц - это август!')
+elif mounth == '9' :
+    print('Ваш месяц - это сентябрь!')
+elif mounth == '10' :
+    print('Ваш месяц - это октябрь!')
+elif mounth == '11' :
+    print('Ваш месяц - это ноябрь!')
+elif mounth == '12' :
+    print('Ваш месяц - это декабрь!')
+else:
+    print('Месяцев в году всего 12.Введите число от 1 до 12!')
+
+
+# Задание 3
+
+number = int(input('Введите ваше число:'))
+
+if number > 0 :
+    print('Number is positive!')
+elif number < 0 :
+    print('Number is negative!')
+elif number == 0 :
+    print('Number is equalto zero!')
+else:
+    print('Нужно вести число!')           
+
+
+# Задание 4
+
+num1 = int(input('Введите ваше первое число :'))
+
+num2 = int(input('Введите ваше второе число :'))
+
+if num1 > num2 :
+    print(num1,num2)
+elif num2 > num1 :
+    print(num2,num1)
+elif num1 == num2 :
+    print('Ваше числа',num1,'и',num2,'равны!')
+else:
+    print('Что-то пошло не так...')           
