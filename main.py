@@ -328,3 +328,29 @@ elif man2 > man3 > man1 :
 elif man3 > man2 > man1 :
     print('По итогам третий менеджер был лучшим и получает премию 200$\n Его зарпалата будет равна :',salary_man3 +200)
 
+
+# Модуль 3 Часть 1
+# Задание 1
+
+num1 = int(input('Введите первое число(начало диапазона) : '))
+
+num2 = int(input('Введите второе число(конец дипазона) : '))
+
+if num1 < num2 :
+    while num1 < num2 :
+        num1 += 1
+        if num1 % 7 == 0 :
+            print(num1)
+elif num1 > num2 :
+    while num2 < num1 :
+        num2 += 1
+        if num2 % 7 == 0 :
+            print(num2)
+else:
+    print('Error!')        
+
+# Задание 2
+
+
+
+
