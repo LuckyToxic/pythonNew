@@ -389,5 +389,29 @@ for i in range(num1,(num2+1),+1) :
     else:
         print(i)            
 
+# Модуль 3 Часть 2
+# Задание 1
 
+num1 = int(input('Введите первое число(начало диапазона) : '))
+
+num2 = int(input('Введите второе число(конец дипазона) : '))
+
+even = 0
+
+not_even = 0
+
+multiples9 = 0
+
+for i in range(num1,(num2+1),+1):
+    if i % 2 == 0 :
+        even += 1
+    if i % 9 == 0 :
+        multiples9 += 1
+    if i % 2 != 0 :
+        not_even += 1
+print(even)
+print(not_even)
+print(multiples9)
+print((even + not_even + multiples9)//3)               
+    
 
