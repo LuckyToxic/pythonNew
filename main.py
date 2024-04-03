@@ -254,4 +254,27 @@ elif num2 > num1 :
 elif num1 == num2 :
     print('Ваше числа',num1,'и',num2,'равны!')
 else:
-    print('Что-то пошло не так...')           
+    print('Что-то пошло не так...')     
+
+
+# Модуль 2 Часть 3
+# Задание 1
+
+number = int(input('Введите число вдиапазоне от 1 до 100 : '))
+
+if number > 0 and number <= 100 :
+    if number % 3 == 0 and number % 5 == 0 :
+        print('Fizz Buzz')
+    elif number % 3 == 0 :
+        print('Fizz')
+    elif number % 5 == 0 :
+        print('Buzz')
+    else: 
+        print(number)
+else:
+    print('Ошибка!Число должно быть от 1 до 100!')     
+
+
+# Задание 2
+
+
