@@ -272,9 +272,59 @@ if number > 0 and number <= 100 :
     else: 
         print(number)
 else:
-    print('Ошибка!Число должно быть от 1 до 100!')     
-
+    print('Ошибка!Число должно быть от 1 до 100!')   
 
 # Задание 2
 
+
+# Задание 4
+
+man1 = int(input('Уровень продаж первого менеджера : '))
+
+man2 = int(input('Уровень продаж второго менеджера : '))
+
+man3 = int(input('Уровень продаж третьего менеджера : '))
+
+salary_man1 = 200
+
+salary_man2 = 200
+
+salary_man3 = 200
+
+if man1 <= 500 :
+    salary_man1 += (man1*3)/100
+    print('Зарпалата первого менеджера : ',salary_man1)
+    if man1 > 500 and man1 <= 1000 :
+        salary_man1 += (man1*5)/100
+        print('Зарпалата первого менеджера : ',salary_man1)
+else:    
+    salary_man1 += (man1*8)/100
+    print('Зарпалата первого менеджера : ',salary_man1)
+
+if man2 <= 500 :
+    salary_man2 += (man2*3)/100
+    print('Зарпалата второго менеджера : ',salary_man2)
+    if man2 > 500 and man2 <= 1000 :
+        salary_man2 += (man2*5)/100
+        print('Зарпалата второго менеджера : ',salary_man2)
+else:    
+    salary_man2 += (man2*8)/100
+    print('Зарпалата второго менеджера : ',salary_man2)
+
+if man3 <= 500 :
+    salary_man3 += (man3*3)/100
+    print('Зарпалата третьего менеджера : ',salary_man3)
+    if man3 > 500 and man3 <= 1000 :
+        salary_man3 += (man3*5)/100
+        print('Зарпалата третьего менеджера : ',salary_man3)
+else:    
+    salary_man3 += (man3*8)/100
+    print('Зарпалата третьего менеджера : ',salary_man3)
+
+if man1 > man2 > man3 :
+    print('По итогам первый менеджер был лучшим и получает премию 200$\n Его зарпалата будет равна :',salary_man1 + 200)
+elif man2 > man3 > man1 :
+    print('По итогам второй менеджер был лучшим и получает премию 200$\n Его зарпалата будет равна :',salary_man2 + 200)
+elif man3 > man2 > man1 :
+    print('По итогам третий менеджер был лучшим и получает премию 200$\n Его зарпалата будет равна :',salary_man3 +200)
 
