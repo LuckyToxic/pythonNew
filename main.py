@@ -413,5 +413,18 @@ print(even)
 print(not_even)
 print(multiples9)
 print((even + not_even + multiples9)//3)               
-    
+
+
+# Задание 2
+
+long = int(input('Введите длину линии :'))
+
+symbol = input('Введите символ :')
+
+count = 0
+
+while count < long :
+    count += 1
+    print(symbol)
+
 
