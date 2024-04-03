@@ -372,8 +372,22 @@ for c in range(num1,(num2+1),+1) :
         count += 1
 print(count)        
 
+
 # Задание 3
 
+num1 = int(input('Введите первое число(начало диапазона) : '))
+
+num2 = int(input('Введите второе число(конец дипазона) : '))
+
+for i in range(num1,(num2+1),+1) :
+    if i % 3 == 0 and i % 5 == 0 :
+        print('Fizz Buzz')
+    elif i % 3 == 0 :
+        print('Fizz')
+    elif i % 5 == 0 :
+        print('Buzz')
+    else:
+        print(i)            
 
 
 
