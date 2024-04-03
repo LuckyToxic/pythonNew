@@ -351,6 +351,29 @@ else:
 
 # Задание 2
 
+num1 = int(input('Введите первое число(начало диапазона) : '))
+
+num2 = int(input('Введите второе число(конец дипазона) : '))
+
+
+for c in range(num1,(num2+1),+1) :
+    print(c,end=' ')
+print('')
+for c in range(num2,(num1-1),-1) :
+    print(c ,end=' ')
+print('')        
+for c in range(num1,(num2+1),+1) :
+    if c % 7 == 0 :
+        print(c,end=' ')
+print('') 
+count = 0
+for c in range(num1,(num2+1),+1) :
+    if c % 5 == 0 :
+        count += 1
+print(count)        
+
+# Задание 3
+
 
 
 
