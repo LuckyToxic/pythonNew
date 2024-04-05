@@ -130,6 +130,7 @@ else :
 
 # Задание 2
 
+
 numb1 = int(input('Введите первое число :'))
 
 numb2 = int(input('Введите второе число :'))
@@ -426,5 +427,53 @@ count = 0
 while count < long :
     count += 1
     print(symbol)
+
+
+# Задание 3
+
+while True:
+    num = int(input('Введите ваше число : '))
+    if num > 0 and num != 7 :
+        print('Number is positive!')
+    elif num < 0 :
+        print('Number is negative!')
+    elif num == 0 :
+        print('Number is equeal to zero!')
+    elif num == 7 :
+        print('Good bye!')
+        break            
+
+# Модуль 3 Часть 3
+# Задание 1
+
+while True :
+    x = int(input('Введите первое целое число : '))
+    y = int(input('Введите второе целое число : '))
+    degree = x**y
+    print('Ваше число ',x,'в степени ',y,',будет равно : ',degree)
+
+
+# Задание 2
+
+count = 0 
+for i in range(100, 1000,+1): 
+    num = str(i) 
+    if num[0] == num[1] or num[0] == num[2] or num[1] == num[2]: 
+        count += 1 
+print('Количество чисел у которых есть две одинаковых цыифры равна : ',count)
+
+# Задание 3
+
+count = 0 
+for i in range(100, 1000,+1): 
+    num = str(i) 
+    if num[0] != num[1] and num[0] != num[2] and num[1] != num[2]: 
+        count += 1 
+for j in range(1000,10000,+1):
+    num1 = str(j)
+    if num1[0] != num1[1] and num1[0] != num1[2] and num1[1] != num1[2] and num1[0] != num1[3] and num1[1] != num1[3] and num1[2] != num1[3]:
+        count += 1   
+print('Количество чисел у которых разные все цыифры равна : ',count)
+
 
 
