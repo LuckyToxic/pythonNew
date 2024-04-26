@@ -475,5 +475,19 @@ for j in range(1000,10000,+1):
         count += 1   
 print('Количество чисел у которых разные все цыифры равна : ',count)
 
+# Модуль 4 Часть 1 
+# Задание 1
 
+x = input('Введите вашу строку :')
+
+y = ''.join(reversed(x))
+
+for i in x :
+    x = str(i)
+for j in y:
+    y = str(j)
+if x == y :
+    print('Палиндром')
+else :
+    print('Не палиндром!')   
 
