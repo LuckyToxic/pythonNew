@@ -517,3 +517,25 @@ for i in text:
 
 print('Колчисетво предложений в вашем тексте : ',count)       
         
+# МОДУЛЬ 4 ЧАСТЬ 2
+# Задание 1
+
+import re
+
+expression = input('Введите ваше выражение : ')
+
+numbers = re.split('[+]|[-]|[*]|[/]',expression)
+
+print(numbers)
+
+for i in expression :
+    if i == '+' :
+        expression = int(numbers[0]) + int(numbers[1])
+    elif i == '-' :
+        expression = int(numbers[0]) - int(numbers[1])
+    elif i == '*' :
+        expression = int(numbers[0]) * int(numbers[1])
+    elif i == '/' :
+        expression = int(numbers[0]) // int(numbers[1])
+
+print(expression)
