@@ -505,3 +505,15 @@ text = text.replace(word3,word3.upper())
 
 # Задание 3 
 
+text = input('Введите ваш текст : ')
+
+count = 0
+
+text = list(text)
+
+for i in text:
+    if i == '.' or i == '!' or i == '?' :
+        count += 1
+
+print('Колчисетво предложений в вашем тексте : ',count)       
+        
