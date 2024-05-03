@@ -491,3 +491,17 @@ if x == y :
 else :
     print('Не палиндром!')   
 
+# Задание 2
+
+text = input('Введите ваш текст :')
+
+word1 = input('Введите зарезервированное слово : ')
+word2 = input('Введите зарезервированное слово : ')
+word3 = input('Введите зарезервированное слово : ')
+
+text = text.replace(word1,word1.upper())
+text = text.replace(word2,word2.upper())
+text = text.replace(word3,word3.upper())
+
+# Задание 3 
+
