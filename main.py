@@ -566,3 +566,44 @@ for i in list4 :
 
 print('Минимальное число : ',min_num,'\nМаксимальное число : ',max_num)
 print('Отрицательных елементов :',negative_num,'\nПоложительных элементов : ',positive_num,'\nНулей : ',null)
+
+# МОДУЛЬ 4 ЧАСТЬ 3
+# Задение 1
+
+list1 = [ random.randrange(0,15) for i in range(5) ]
+
+list2 = [ random.randrange(0,15) for i in range(5) ]
+# Сформировать третий список, содержащий элементы обоих списков;
+list3 = list1 + list2
+
+print(list1)
+print(list2)
+print(list3)
+# Сформировать третий список, содержащий элементы обоих списков без повторений;
+for i in list3 :
+    if list3.count(i) >= 2 :
+        list3.remove(i)
+print(list3)
+#Сформировать третий список, содержащий элементы общие для двух списков; 
+list3 = []
+
+for i in list1 :
+    if i in list2 :
+        list3.append(i)
+
+print(list3)
+#Сформировать третий список, содержащий только уникальные элементы каждого из
+list3 = []
+
+for i in list1 :
+    if list1.count(i) == 1 :
+        list3.append(i)
+for j in list2 :
+    if list2.count(j) == 1 :
+        list3.append(j)
+
+print(list3)
+#Сформировать третий список, содержащий только минимальное и максимальное значение каждого из списков.
+list3 = [max(list1),min(list1),max(list2),min(list2)]
+ 
+print(list3)
