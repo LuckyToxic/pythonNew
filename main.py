@@ -539,3 +539,30 @@ for i in expression :
         expression = int(numbers[0]) // int(numbers[1])
 
 print(expression)
+
+# Задание 2
+
+list4 = [ random.randrange(-10,10) for i in range(10)]
+
+print(list4)
+
+min_num = min(list4)
+
+max_num = max(list4)
+
+negative_num = 0
+
+positive_num = 0
+
+null = 0
+
+for i in list4 :
+    if i > 0 :
+        positive_num += 1
+    elif i < 0 :
+        negative_num += 1
+    else :
+        null = 0
+
+print('Минимальное число : ',min_num,'\nМаксимальное число : ',max_num)
+print('Отрицательных елементов :',negative_num,'\nПоложительных элементов : ',positive_num,'\nНулей : ',null)
