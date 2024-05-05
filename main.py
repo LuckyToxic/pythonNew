@@ -607,3 +607,18 @@ print(list3)
 list3 = [max(list1),min(list1),max(list2),min(list2)]
  
 print(list3)
+
+# МОДУЛЬ 5 ЧАСТЬ 1
+#Задание 1 
+
+def showText():
+    print('"Don`t compare yourself with anyone in this world...\nif you do so you are insilting yourself."\n\t\t\t\tBill Gates')
+
+showText()
+
+# Задание 2
+
+def evenNum(a,b):
+    for i in range(a,b):
+        if i % 2 == 0:
+            print(i)
