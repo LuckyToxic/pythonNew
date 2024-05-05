@@ -666,3 +666,12 @@ def composition(a,b):
         for i in arr :
             result = result * i
         return print(result)  
+
+# Задание 6
+
+def countNumb(num):
+    arr = str(num)
+    arr = list(arr)
+    return print(len(arr))
+
+countNumb(12345678)
