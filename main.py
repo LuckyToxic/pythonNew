@@ -645,3 +645,8 @@ def square(long,symbol,bool=False):
          
        
 square(10,'@',True)
+
+# Задание 4
+
+def minNumb(*args):
+    print(min(args))
