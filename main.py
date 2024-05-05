@@ -622,3 +622,26 @@ def evenNum(a,b):
     for i in range(a,b):
         if i % 2 == 0:
             print(i)
+
+# Задание 3
+
+def square(long,symbol,bool=False):
+    if bool == False :
+        arr = []
+        for i in range(long) :
+            arr.append(symbol)
+        print(' '.join(arr))
+        for i in range(long-2):
+            print(symbol.ljust(long) + symbol.rjust(long-1))
+        print(' '.join(arr))
+    elif bool == True :
+        arr = []
+        for i in range(long) :
+            arr.append(symbol)
+        print(' '.join(arr))
+        for i in range(long-2):
+            print(symbol.ljust(long,symbol) + symbol.rjust(long-1,symbol))
+        print(' '.join(arr))
+         
+       
+square(10,'@',True)
