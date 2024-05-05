@@ -650,3 +650,19 @@ square(10,'@',True)
 
 def minNumb(*args):
     print(min(args))
+
+# Задание 5
+
+def composition(a,b):
+    if a < b :
+        result = 1
+        arr = [i for i in range(a,b+1)]
+        for i in arr:
+            result = result * i
+        return print(result)
+    elif a > b :
+        result = 1
+        arr = [ i for i in range(b,a+1)]
+        for i in arr :
+            result = result * i
+        return print(result)  
