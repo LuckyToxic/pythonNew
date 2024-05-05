@@ -675,3 +675,22 @@ def countNumb(num):
     return print(len(arr))
 
 countNumb(12345678)
+
+# Задание 7
+
+def isPalindrome(num):
+    num = list(str(num))
+    num1 = []
+    num2 = []
+    for i in num[:3]:
+        num1.append(i)    
+    for i in num[3:]:
+        num2.append(i)
+    num1 = ''.join(num1)
+    num2 = ''.join(reversed(num2)) 
+    num1 = int(num1)
+    num2 = int(num2)
+    if num1 == num2 :
+        print(True) 
+    else :
+        print(False)         
