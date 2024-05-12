@@ -709,4 +709,32 @@ center = sum(myList)//l
 if center > 0 :
     myList = sorted(myList[:k*2]) + reversed(myList[k*2:])
 
+# Задание 2
 
+estimation = []
+
+for i in range(10):
+    x = int(input('Введите оценку ученика :'))
+    estimation.append(x)
+
+choise = (input('1 - вывод оценок.\n2 - пересдача оценок.\n3 - выходит ли стипендия.\n4 - оценки по возрастанию.'))
+
+if choise == '1' :
+    print(estimation)
+elif choise == '2' :
+    change = int(input('Введите номер оценки для изменения :'))
+    
+    new_estimation = int(input('Введите новую оценку :'))
+
+    estimation[change] = new_estimation
+elif choise == '3' :
+    grant = []
+    for i in estimation :
+        if i >= 10.7 :
+            grant.append('Yes')
+        elif i < 10.7 :
+            grant.append('No')
+
+    print(grant)
+elif choise == '4' : 
+    print(sorted(estimation))  
