@@ -693,4 +693,20 @@ def isPalindrome(num):
     if num1 == num2 :
         print(True) 
     else :
-        print(False)         
+        print(False)       
+
+# МОДУЛЬ 7 ЧАСТЬ 1
+# Задание 1
+
+myList = [999999.5,8, 10, 6, 2, 4,12,54,23,5,123,35,4,631265,45643,21,35,6] 
+
+l = len(myList)
+
+k = l//3
+
+center = sum(myList)//l
+
+if center > 0 :
+    myList = sorted(myList[:k*2]) + reversed(myList[k*2:])
+
+
