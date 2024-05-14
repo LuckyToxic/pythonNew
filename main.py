@@ -727,6 +727,7 @@ elif choise == '2' :
     new_estimation = int(input('Введите новую оценку :'))
 
     estimation[change] = new_estimation
+    print(estimation)
 elif choise == '3' :
     grant = []
     for i in estimation :
