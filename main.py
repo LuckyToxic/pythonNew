@@ -758,3 +758,20 @@ for i in first :
 new_tuple = tuple(set(new_tuple))
 
 new_tuple = tuple(new_tuple)
+
+# ЗАДАНИЕ 2
+
+first = tuple([random.randint(0,20) for x in range(10)])
+second = tuple([random.randint(0,20) for x in range(10)])
+third = tuple([random.randint(0,20) for x in range(10)])
+
+def getUnic(arr):
+    new_tuple = []
+    for i in arr :
+        if arr.count(i) == 1:
+            new_tuple.append(i)
+    new_tuple = tuple(new_tuple)
+    return new_tuple
+
+print((getUnic(first),getUnic(second),getUnic(third)))       
+print(getUnic([*first,*second,*third]))     
