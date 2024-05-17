@@ -775,3 +775,15 @@ def getUnic(arr):
 
 print((getUnic(first),getUnic(second),getUnic(third)))       
 print(getUnic([*first,*second,*third]))     
+
+# ЗАДАНИЕ 3
+
+first = tuple([0,0,2,2])
+second = tuple([x for x in range(10)])
+third = tuple([x for x in range(10)])
+
+new_tuple = []
+
+for i in range(len(first)) :
+    if first[i] in second and first[i] in third and i == second.index(first[i]) and i == third.index(first[i]):
+        new_tuple.append(i)
