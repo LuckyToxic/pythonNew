@@ -739,3 +739,26 @@ elif choise == '3' :
     print(grant)
 elif choise == '4' : 
     print(sorted(estimation))  
+
+# МОДУЛЬ 8 ЧАСТЬ 1
+# ЗАДАНИЕ 1
+
+first = tuple([random.randint(0,20) for i in range(10)])
+
+second = tuple([random.randint(0,20) for i in range(10)])
+
+third = tuple([random.randint(0,20) for i in range(10)])
+
+new_tuple = []
+
+for i in first :
+    pass
+    for x in second:
+        pass
+        for y in third :
+            if i == x and i == y and x == y :
+                new_tuple.append(i)
+
+new_tuple = set(new_tuple)
+
+new_tuple = tuple(new_tuple)
