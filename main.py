@@ -752,13 +752,9 @@ third = tuple([random.randint(0,20) for i in range(10)])
 new_tuple = []
 
 for i in first :
-    pass
-    for x in second:
-        pass
-        for y in third :
-            if i == x and i == y and x == y :
-                new_tuple.append(i)
+    if i in second and i in third :
+        new_tuple.append(i)
 
-new_tuple = set(new_tuple)
+new_tuple = tuple(set(new_tuple))
 
 new_tuple = tuple(new_tuple)
