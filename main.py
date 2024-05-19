@@ -819,3 +819,37 @@ def change_players(name,new_value):
     new = {name : new_value}
     basketball_players.update(new)
     print(basketball_players)
+
+# ЗАДАНИЕ 2
+
+transleater = {
+    'runner' : 'coureur',
+    'work' : 'travail',
+    'sleep' : 'sommeil',
+    'sheep' : 'moutons'
+}
+
+def add_word(eng_word,franch_word):
+    if eng_word not in transleater:
+        transleater[eng_word] = franch_word
+        print(transleater)
+    else :
+        print('Такое слово уже есть!')
+       
+def revome_word(eng_word):
+    if eng_word in transleater:
+        del transleater[eng_word]
+        print(transleater)
+    else :
+        print('Такого слова нет!')
+
+def search_word(eng_word):
+    if eng_word in transleater :
+        print(f'English word : {eng_word} Franch word : {transleater[eng_word]}')
+    else:
+        print('Такого слова нет!')
+
+def change_in_transleter(eng_word,new_word):
+    new = {eng_word : new_word}
+    transleater.update(new)
+    print(transleater)
