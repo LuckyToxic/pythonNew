@@ -787,3 +787,35 @@ new_tuple = []
 for i in range(len(first)) :
     if first[i] in second and first[i] in third and i == second.index(first[i]) and i == third.index(first[i]):
         new_tuple.append(i)
+
+# МОДУЛЬ 8 ЧАСТЬ 2
+# ЗАДАНИЕ 1
+
+basketball_players = {
+    'LeBron James' : 206,
+    'Shaquille o`neal' : 216,
+    'Michael Jordan' : 198,
+    'Kobe Brayan' : 198,
+    'Karl Malone' : 206
+}
+
+def add_players(name,growth) :
+    if name not in basketball_players:
+        basketball_players[name] = growth
+        print(basketball_players)
+    else:
+        print('Такое имя уже есть!')
+def remove_players(name) :
+    del basketball_players[name]
+    print(basketball_players)
+
+def search_players(name):
+    if name in basketball_players :
+        print(f'Name : {name}  Growth : {basketball_players[name]}')
+    else :
+        print(f'Такого имени как {name} нет в словаре ')
+
+def change_players(name,new_value):
+    new = {name : new_value}
+    basketball_players.update(new)
+    print(basketball_players)
