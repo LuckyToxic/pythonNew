@@ -853,3 +853,53 @@ def change_in_transleter(eng_word,new_word):
     new = {eng_word : new_word}
     transleater.update(new)
     print(transleater)
+
+# Реализуйте класс «Автомобиль». Необходимо хранить
+# в полях класса: название модели, год выпуска, произво-
+# дителя, объем двигателя, цвет машины, цену. Реализуйте
+# методы класса для ввода данных, вывода данных, реа-
+# лизуйте доступ к отдельным полям через методы класса.
+
+class Car :
+    def inputInfo(self):
+        self.model = input('Введите название модели : ')
+        self.year = input('Введите год выпуска : ')
+        self.manufacturer = input('Введите производителя : ')
+        self.engine = input('Введите объем двигателя : ')
+        self.color = input('Введите цвет машины : ')
+        self.price = input('Введите цену машины : ')
+    def showInfo(self):
+        print(f'Название модели : {self.model}')
+        print(f'Год выпуска машины : {self.year}')
+        print(f'Производитель : {self.manufacturer}')
+        print(f'Объем двигателя : {self.engine}')
+        print(f'Цвет машины : {self.color}')
+        print(f'Цена машины : {self.price}')
+    def get_model(self) :
+        return self.model    
+    def set_model(self,model):
+        self.model = model
+    def get_year(self) :
+        return self.year    
+    def set_year(self,year):
+        self.year = year
+    def get_manufacturer(self) :
+        return self.manufacturer    
+    def set_manufacturer(self,manufacturer):
+        self.manufacturer = manufacturer
+    def get_engine(self) :
+        return self.engine    
+    def set_engine(self,engine):
+        self.engine = engine
+    def get_color(self) :
+        return self.color    
+    def set_color(self,color):
+        self.color = color
+    def get_price(self) :
+        return self.price    
+    def set_price(self,price):
+        self.price = price
+       
+car = Car()
+car.inputInfo()
+car.showInfo()
