@@ -903,3 +903,55 @@ class Car :
 car = Car()
 car.inputInfo()
 car.showInfo()
+
+# Реализуйте класс «Книга». Необходимо хранить в
+# полях класса: название книги, год выпуска, издателя,
+# жанр, автора, цену. Реализуйте методы класса для ввода
+# данных, вывода данных, реализуйте доступ к отдельным
+# полям через методы класса.
+
+class Book :
+    books = []
+    def __init__(self,name,year,author,price):
+        self.name = name
+        self.year = year
+        self.author = author
+        self.price = price
+        Book.books.append(self)    
+
+    def showBooksAll():
+        for book in Book.books :
+            print(book.__dict__)        
+
+    def showOneBook(num):
+        if num <= len(Book.books) :
+            print(Book.books[num-1].__dict__)
+        else :
+            print('Столько книг нет в библиотеке!')  
+
+    def changeBook():
+        how_book = input('Введите номер книги в библиотеке : ')
+        how_book = int(how_book) - 1
+        what_to_do = input('Изменить книгу - 1\nУдалить - 2\nВведите выбор : ')
+        if what_to_do == '1' :
+            choice = input('Изменить имя - 1\nИзменить год выпуска - 2\nИзменить автора - 3\nИзменить цену - 4\nВаш выбор : ')
+            if choice == '1' :
+                new_name = input('Введите новое значение : ')
+                Book.books[how_book].name = new_name                  
+            elif choice == '2' :
+                new_year = input('Введите новое значение : ')
+                Book.books[how_book].year = new_year                      
+            elif choice == '3' :
+                new_author = input('Введите новое значение : ')
+                Book.books[how_book].author = new_author                  
+            elif choice == '4' :
+                new_price = input('Введите новое значение : ')
+                Book.books[how_book].price = new_price                  
+        elif what_to_do == '2':
+            del Book.books[how_book]    
+        Book.showOneBook(how_book + 1)       
+Book('Отцы и дети',2003,'Пушкин',300)
+Book('Приступление и наказание',1921,'Толстой',800)
+Book('Кафе на краю Земли',1993,'Солнечный',3700)
+
+
