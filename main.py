@@ -954,4 +954,34 @@ Book('Отцы и дети',2003,'Пушкин',300)
 Book('Приступление и наказание',1921,'Толстой',800)
 Book('Кафе на краю Земли',1993,'Солнечный',3700)
 
+# К уже реализованному классу «Автомобиль» добавьте
+# конструктор, а также необходимые перегруженные методы.
 
+class Car :
+    def __init__(self,model,year,manufacturer,engine,color,price):
+        self.model = model
+        self.year = year
+        self.manufacturer = manufacturer
+        self.engine = engine
+        self.color = color
+        self.price = price
+    def showInfo(self,other=None):
+        if other == None :
+            print(f'Название модели : {self.model}')
+            print(f'Год выпуска машины : {self.year}')
+            print(f'Производитель : {self.manufacturer}')
+            print(f'Объем двигателя : {self.engine}')
+            print(f'Цвет машины : {self.color}')
+            print(f'Цена машины : {self.price}')
+        elif other == self.model :
+            print(f'Название модели : {self.model}')
+        elif other == self.year :
+            print(f'Год выпуска машины : {self.year}')
+        elif other == self.manufacturer :
+            print(f'Производитель : {self.manufacturer}')
+        elif other == self.engine :
+            print(f'Объем двигателя : {self.engine}')
+        elif other == self.color :
+            print(f'Объем двигателя : {self.color}')
+        elif other == self.price :
+            print(f'Цена машины : {self.price}')
