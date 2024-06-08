@@ -1146,3 +1146,31 @@ class Money :
             print(f'Сумма : {self.integer} долларов {self.fraction} центов!')
         elif self.currency == 'гривны' :
             print(f'Сумма : {self.integer} гривен {self.fraction} копеек!')
+
+# Создайте класс для конвертирования температуры из
+# Цельсия в Фаренгейт и наоборот. У класса должно быть
+# два статических метода: для перевода из Цельсия в Фа-
+# ренгейт и для перевода из Фаренгейта в Цельсий. Также
+# класс должен считать количество подсчетов температуры и
+# возвращать это значение с помощью статического метода.
+
+class Temperature :
+    
+    number_counts = 0
+
+    @staticmethod
+    def inFaringate(celsius : int):
+        f = (celsius * 1.8) + 32
+        Temperature.number_counts += 1
+        return f 
+        
+
+    @staticmethod
+    def inCelsius(faringate : int):
+        c = (faringate - 32) / 1.8
+        Temperature.number_counts += 1
+        return round(c,2) 
+
+    @staticmethod
+    def numberCounts():
+        return Temperature.number_counts
