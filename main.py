@@ -1038,3 +1038,81 @@ Book('Отцы и дети',2003,'Пушкин',300)
 Book('Приступление и наказание',1921,'Толстой',800)
 Book('Кафе на краю Земли',1993,'Солнечный',3700)
 
+# Создайте класс Device, который содержит информа-
+# цию об устройстве.
+# С помощью механизма наследования, реализуйте класс
+# Coffee Machine (содержит информацию о кофемашине)
+# класс Blender (содержит информацию о блендере), класс
+# MeatGrinder (содержит информацию о мясорубке).
+# Каждый из классов должен содержать необходимые
+# для работы методы.
+
+class Divice :
+    def __init__(self,manufacture,model,color,power):
+        self.manufacture = manufacture
+        self.model = model
+        self.color = color
+        self.power = power
+
+
+class CoffeMachine(Divice): 
+    running = False
+
+    def start():
+        CoffeMachine.running = True
+        choiceCoffe = input('Какой кофе пригтовить : Эспрессо,Американо,Капучино,Латте?\n')
+        if choiceCoffe == 'Эспрессо' :
+            print('Эспрессо : объем 30 мл,будет готов через 10 секунд.')
+            confirmation = input('Начать готовить : Да , Нет?\n')
+            if confirmation == 'Да' :
+                print('Начали готовить кофе для вас.Всего доброго!')
+            else:
+                print('Выберите другой кофе!')
+                CoffeMachine.start()   
+        elif choiceCoffe == 'Американо' :
+            print('Эспрессо : объем 120 мл,будет готов через 20 секунд.')
+            confirmation = input('Начать готовить : Да , Нет?\n')
+            if confirmation == 'Да' :
+                print('Начали готовить кофе для вас.Всего доброго!')
+            else:
+                print('Выберите другой кофе!')
+                CoffeMachine.start()   
+        elif choiceCoffe == 'Капучино' :
+            print('Эспрессо : объем 160 мл,будет готов через 40 секунд.')
+            confirmation = input('Начать готовить : Да , Нет?\n')
+            if confirmation == 'Да' :
+                print('Начали готовить кофе для вас.Всего доброго!')
+            else:
+                print('Выберите другой кофе!')
+                CoffeMachine.start()   
+        elif choiceCoffe == 'Латте' :
+            print('Эспрессо : объем 180 мл,будет готов через 50 секунд.')
+            confirmation = input('Начать готовить : Да , Нет?\n')
+            if confirmation == 'Да' :
+                print('Начали готовить кофе для вас.Всего доброго!')
+            else:
+                print('Выберите другой кофе!')
+                CoffeMachine.start()   
+        
+
+class Blender(Divice):
+    running = False
+
+    def start():
+        choice = input('Начать работу ?Да,Нет.\n')
+        if choice == 'Да' :
+            Blender.running = True
+            print('Давайте скорее измельчать!')
+        else :
+            print('Буду ждать вас тут и скучать!=(')    
+
+class MeatGrinder(Divice):
+    running = False
+
+    def start():
+        choice = input('Начать работу ?Да,Нет.\n')
+        if choice == 'Да' :
+            MeatGrinder.running = True
+            print('Давайте сделаем вкуснейший фарш!')
+        else :
+            print('Буду ждать вас тут и скучать!=(')    
