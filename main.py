@@ -1116,3 +1116,33 @@ class MeatGrinder(Divice):
             print('Давайте сделаем вкуснейший фарш!')
         else :
             print('Буду ждать вас тут и скучать!=(')    
+
+# Запрограммируйте класс Money (объект класса опе-
+# рирует одной валютой) для работы с деньгами.
+# В классе должны быть предусмотрены поле для хра-
+# нения целой части денег (доллары, евро, гривны и т.д.) и
+# поле для хранения копеек (центы, евроценты, копейки
+# и т.д.).
+# Реализовать методы для вывода суммы на экран, за-
+# дания значений для частей.
+
+
+class Money :
+    def __init__(self,currency,integer=0,fraction=0):
+        self.currency = currency
+        self.integer = integer
+        self.fraction = fraction
+
+    def set_integer(self,integer):
+        self.integer = integer
+
+    def set_fraction(self,fraction):
+        self.fraction = fraction
+
+    def display(self):
+        if self.currency == 'рубли' :
+            print(f'Сумма : {self.integer} рублей {self.fraction} копеек!')
+        elif self.currency == 'доллары' :
+            print(f'Сумма : {self.integer} долларов {self.fraction} центов!')
+        elif self.currency == 'гривны' :
+            print(f'Сумма : {self.integer} гривен {self.fraction} копеек!')
