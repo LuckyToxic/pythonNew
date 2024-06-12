@@ -1219,3 +1219,26 @@ def simpleNum():
     return primeNumbers
 
 print(simpleNum())     
+
+# Добавьте к первому заданию возможность передавать
+# границы диапазона для поиска всех простых чисел.
+
+def timer(func):
+    def wrapper(*args,**kwargs):
+        startTime = time.time()
+        result = func(*args,**kwargs)
+        endTime = time.time()
+        finalTime = endTime - startTime
+        print(finalTime)
+        return result
+    return wrapper
+    
+@timer
+def simpleNum(num1=2,num2=1000):
+    primeNumbers = []
+    for i in range(num1,num2 + 1):
+        if all( i % j != 0 for j in range(2,i)):
+            primeNumbers.append(i)
+    return primeNumbers
+
+print(simpleNum(2,10000))     
