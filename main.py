@@ -1283,3 +1283,44 @@ class Circle :
     def __isub__(self,other):
         self.value -= other
         return self
+
+# Вам необходимо создать класс Airplane (самолет).
+# С помощью перегрузки операторов реализовать :
+# ■ Проверка на равенство типов самолетов (операция
+# = =);
+# ■ Увеличение и уменьшение пассажиров в салоне са-
+# молета (операции + - += -=);
+# ■ Сравнение двух самолетов по максимально возмож-
+# ному количеству пассажиров на борту (операции >
+# < <= >=).
+
+class Airplane :
+    def __init__(self,type,passengers,max_passengers):
+        self.type = type
+        self.passengers = passengers
+        self.max_passengers = max_passengers
+
+    def __eq__(self,other):
+        return self.type == other.type
+
+    def __add__(self,other):
+        return self.passengers + other
+    def __iadd__(self,other):
+        self.passengers += other
+        return self
+
+    def __sub__(self,other):
+        return self.passengers - other
+    def __isub__(self,other):
+        self.passengers -= other
+        return self
+
+    def __gt__(self,other):
+        return self.max_passengers > other.max_passengers
+    def __le__(self,other):
+        return not (self.max_passengers > other.max_passengers)
+    
+    def __lt__(self,other):
+        return self.max_passengers < other.max_passengers
+    def __ge__(self,other):
+        return not (self.max_passengers < other.max_passengers)
