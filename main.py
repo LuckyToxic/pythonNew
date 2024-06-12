@@ -1193,3 +1193,29 @@ class LengthConverter:
     @staticmethod
     def inMeters(miles):
         return miles * LengthConverter.miles 
+
+# Создайте функцию, возвращающую список со всеми
+# простыми числами от 0 до 1000
+# Используя механизм декораторов посчитайте сколько
+# секунд, потребовалось для вычисления всех простых чисел.
+# Отобразите на экран количество секунд и простые числа.
+
+def timer(func):
+    def wrapper(*args,**kwargs):
+        startTime = time.time()
+        result = func(*args,**kwargs)
+        endTime = time.time()
+        finalTime = endTime - startTime
+        print(finalTime)
+        return result
+    return wrapper
+    
+@timer
+def simpleNum():
+    primeNumbers = []
+    for i in range(2,1001):
+        if all( i % j != 0 for j in range(2,i)):
+            primeNumbers.append(i)
+    return primeNumbers
+
+print(simpleNum())     
