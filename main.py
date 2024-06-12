@@ -1242,3 +1242,44 @@ def simpleNum(num1=2,num2=1000):
     return primeNumbers
 
 print(simpleNum(2,10000))     
+
+
+# Создайте класс Circle (окружность). Для данного
+# класса реализуйте ряд перегруженных операторов:
+# ■ Проверка на равенство радиусов двух окружностей
+# (операция = =);
+# ■ Сравнения длин двух окружностей (операции >, <,
+# <=,>=);
+# ■ Пропорциональное изменение размеров окружности,
+# путем изменения ее радиуса (операции + - += -=).
+
+class Circle :
+    def __init__(self,value) :
+        self.value = value
+
+    def __eq__(self,other):
+        return self.value == other.value
+    def __ne__(self,other):
+        return not(self == other) 
+    
+    def __gt__(self,other):
+        return self.value > other.value
+    def __le__(self,other):
+        return not (self > other)
+    
+    def __lt__(self,other):
+        return self.value < other.value
+    def __ge__(self,other):
+        return not (self < other)
+    
+    def __add__(self,other):
+        return self.value + other
+    def __iadd__(self,other):
+        self.value += other
+        return self
+
+    def __sub__(self,other):
+        return self.value - other
+    def __isub__(self,other):
+        self.value -= other
+        return self
