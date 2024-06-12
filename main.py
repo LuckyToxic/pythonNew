@@ -1174,3 +1174,22 @@ class Temperature :
     @staticmethod
     def numberCounts():
         return Temperature.number_counts
+
+
+# Создайте класс для перевода из метрической системы
+# в английскую и наоборот. Функциональность необходимо
+# реализовать в виде статических методов. Обязательно
+# реализуйте перевод мер длины.
+
+class LengthConverter:
+    miles = 1609.34
+
+
+    @staticmethod
+    def inMiles(meters):
+        return meters / LengthConverter.miles
+         
+    
+    @staticmethod
+    def inMeters(miles):
+        return miles * LengthConverter.miles 
