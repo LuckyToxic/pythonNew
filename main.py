@@ -1213,7 +1213,7 @@ def timer(func):
 @timer
 def simpleNum():
     primeNumbers = []
-    for i in range(2,1001):
+    for i in range(0,1001):
         if all( i % j != 0 for j in range(2,i)):
             primeNumbers.append(i)
     return primeNumbers
