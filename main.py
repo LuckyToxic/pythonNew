@@ -1319,3 +1319,109 @@ class Airplane :
         return self.max_passengers < other.max_passengers
     def __ge__(self,other):
         return not (self.max_passengers < other.max_passengers)
+
+# Пользователь вводит с клавиатуры набор чисел. По-
+# лученные числа необходимо сохранить в список (тип
+# списка нужно выбрать в зависимости от поставленной
+# ниже задачи). После чего нужно показать меню, в котором
+# предложить пользователю набор пунктов:
+
+# 1.Добавить новое число в список (если такое число су-
+# ществует в списке, нужно вывести сообщение поль-
+# зователю об этом, без добавления числа).
+
+# 2.Удалить все вхождения числа из списка (пользователь
+# вводит с клавиатуры число для удаления).
+
+# 3.Показать содержимое списка (в зависимости от вы-
+# бора пользователя список нужно показать с начала
+# или с конца).
+
+# 4.Проверить есть ли значение в списке.
+
+# 5.Заменить значение в списке (пользователь опреде-
+# ляет заменить ли только первое вхождение или все
+# вхождения).
+
+# В зависимости от выбора пользователя выполняется
+# действие, после чего меню отображается снова.
+
+class ListData :
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class TwoWayList :
+    def __init__(self):
+        self.start = None
+        self.end = None
+    def append(self,data):
+        newData = ListData(data)
+        if self.start == None:
+            self.start = newData
+        if self.end == None:
+            self.end = newData
+        else:        
+            el = self.start
+            while el.next != None:
+                if newData.data == el.data:
+                    print('Такой элемент уже есть,добавлен не будет!')
+                    return
+                else:
+                    el = el.next
+            el.next = newData
+            newData.prev = el
+            self.end = newData
+
+    def showListForvard(self):
+        list = self.start
+        while list.next != None :
+            print(list.data)
+            list = list.next
+        print(list.data)
+
+    def showListBackvard(self):
+        list = self.end
+        while list.prev != None:
+            print(list.data)
+            list = list.prev
+        print(list.data)        
+
+    def delete(self,data):
+        el = self.start
+        while True:
+            if el == None:
+                break
+            if data == el.data :
+                if el.next:
+                    el.next.prev = el.prev
+                el.prev.next = el.next
+                return
+            el = el.next
+        print('Такого элемента нет в списке!')   
+
+    def elementIn(self,data):
+        list = self.start
+        while True:
+            if list == None:
+                break
+            if data == list.data:
+                print(True)
+                return
+            else:
+                list = list.next
+        print(False)        
+
+    def changeElement(self,value,data):
+        list = self.start
+        while True:
+            if list == None:
+                break
+            if value == list.data:
+                list.data = data
+                print('Замена произведена!')
+                return
+            else:
+                list = list.next
+        print('Такого элемента нет!')
