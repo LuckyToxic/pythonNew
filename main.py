@@ -1425,3 +1425,45 @@ class TwoWayList :
             else:
                 list = list.next
         print('Такого элемента нет!')
+
+# Создайте приложение для приготовления пасты. При-
+# ложение должно уметь создавать минимум три вида па-
+# сты. Классы различной пасты должны иметь следующие
+# методы:
+# ■ Тип пасты;
+# ■ Соус;
+# ■ Начинка;
+# ■ Добавки.
+
+class Pasta:
+    def __init__(self):
+        self.typePasta = None
+        self.sauce = None
+        self.filling = None
+        self.additives = None
+
+class PastaBuilder:
+        def __init__(self):
+            self.pasta = Pasta()
+
+        def set_typePasta(self,typePasta):
+            self.pasta.typePasta = typePasta
+            return self
+
+        def set_sauce(self,sauce):
+            self.pasta.sauce = sauce
+            return self
+        
+        def set_filling(self,filling):
+            self.pasta.filling = filling
+            return self
+        
+        def set_additives(self,additives):
+            self.pasta.additives = additives
+            return self
+        
+        def get_pasta(self):
+            return self.pasta
+
+builder = PastaBuilder()
+pasta = builder.set_typePasta('Спаггети').set_sauce('Сливочный').set_filling('Бекон').set_additives('Пармезан').get_pasta()
