@@ -1467,3 +1467,24 @@ class PastaBuilder:
 
 builder = PastaBuilder()
 pasta = builder.set_typePasta('Спаггети').set_sauce('Сливочный').set_filling('Бекон').set_additives('Пармезан').get_pasta()
+
+
+# Создайте классическую реализацию паттерна Singleton.
+# Протестируйте работу созданного класса.
+
+class Singleton:
+    __instance = None
+
+    def __new__(cls,*args,**kwargs):
+        if cls.__instance is None:
+            cls.__instance = super().__new__(cls)
+        return cls.__instance
+    def __init__(self,val):
+        if not hasattr(self,'val'):
+            self.val = val
+
+sing = Singleton(10)
+print(sing.val)   #10
+sing2 = Singleton(20)
+print(sing2.val)    # 10 
+print(sing == sing2)  # True 
