@@ -1492,15 +1492,24 @@ print(sing == sing2)  # True
 # Создайте реализацию паттерна Abstract Factory. Про-
 # тестируйте работу созданного класса.
 
-class WindowFactory:
-    @classmethod
+from abc import ABC, abstractmethod
+
+class WindowFactory(ABC):
+    class Window:
+        def add_button(self, btn):
+            pass
+        def show(self):
+            pass
+    @classmethod 
+    @abstractmethod
     def create_window(cls,name):
         return cls.Window(name)
-    @classmethod
+    @classmethod 
+    @abstractmethod
     def create_button(cls,name):
         return cls.Button(name)
     
-class MacOsFactory(WindowFactory):
+class MacOsFactory(WindowFactory, ABC):
     class Window:
         def __init__(self,name):
             self.name = name
@@ -1518,7 +1527,7 @@ class MacOsFactory(WindowFactory):
             self.name = name
             self.style = 'Mac Os button style'
 
-class LinuxFactory(WindowFactory):
+class LinuxFactory(WindowFactory, ABC):
     class Window:
         def __init__(self,name):
             self.name = name
@@ -1535,14 +1544,23 @@ class LinuxFactory(WindowFactory):
             self.name = name 
             self.style = 'Ubuntu button style'
 
-def create_dialog(factory):
+def create_dialog(factory:WindowFactory):
     wind = factory.create_window('Form1')
     button = factory.create_button('Button1')
     wind.add_button(button)
     return wind
 
-create_dialog(LinuxFactory) 
 
-w = WindowFactory.create_window(LinuxFactory)
-
+osDict = {
+    'Windows':LinuxFactory,
+    'mac':MacOsFactory,
+}
+import platform
+print(platform.system())
+w = create_dialog(osDict[platform.system()]) 
+w = create_dialog(LinuxFactory) 
 w.show()
+ 
+l = create_dialog(MacOsFactory)
+l.show()
+
