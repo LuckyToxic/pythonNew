@@ -1599,3 +1599,47 @@ myRectClone = myRect.clone()
 print(myRect.__dict__)
 print(myRectClone.__dict__)
 print(myRect is myRectClone)
+
+
+# Реализация паттерна Адаптер
+
+class LogToFile:
+    def __init__(self,fileName):
+        self.fileName = fileName
+    def log(self,*args):
+        print('log to file',datetime.datetime.now(),*args)    
+
+class LogToDisplay:
+    def log(self,*args):
+        print('log to display',*args)    
+
+
+class Logger:
+    def __init__(self,logObject):
+        self.logObject = logObject
+    def log(self,*args):
+        self.logObject.log(*args)
+
+class Calc:
+    def __init__(self,logger):
+        self.logger = logger 
+        self.x = 0
+    def add(self,x):
+        self.log(self.x,'add',x) 
+        self.x += x
+    def log(self,*args):
+        self.logger.log(*args)    
+
+
+c1 = Calc(Logger(LogToDisplay()))
+
+c1.add(3)
+c1.add(5)
+c1.add(10)
+
+
+c2 = Calc(Logger(LogToFile('calc,log')))
+
+c2.add(1)
+c2.add(3)
+c2.add(8)
