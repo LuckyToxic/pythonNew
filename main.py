@@ -1564,3 +1564,38 @@ w.show()
 l = create_dialog(MacOsFactory)
 l.show()
 
+# Реализация паттерна Prototype
+
+class Point:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+    def clone(self):
+        return Point(self.x,self.y)    
+    def __repr__(self) -> str :
+        return f'({self.x},{self.y})'        
+
+class Shape(abc.ABC):
+    @abc.abstractmethod
+    def clone(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self,p1:Point,p2:Point):
+        self.p1 = p1
+        self.p2 = p2
+    def clone(self):
+        return Rectangle(self.p1.clone(),self.p2.clone())    
+
+class Circle(Shape):
+    def __init__(self,p:Point,r:float):
+        self.p = p
+        self.r = r
+    def clone(self):
+        return Circle(self.p.clone(),self.r)
+
+myRect = Rectangle(Point(0,0),Point(5,3))
+myRectClone = myRect.clone()
+print(myRect.__dict__)
+print(myRectClone.__dict__)
+print(myRect is myRectClone)
