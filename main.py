@@ -1643,3 +1643,108 @@ c2 = Calc(Logger(LogToFile('calc,log')))
 c2.add(1)
 c2.add(3)
 c2.add(8)
+
+# Создайте приложение для работы в библиотеке. Оно
+# должно оперировать следующими сущностями: Книга,
+# Библиотекарь, Читатель. Приложение должно позволять
+# вводить, удалять, изменять, сохранять в файл, загружать из
+# файла, логгировать действия, искать информацию (резуль-
+# таты поиска выводятся на экран или файл) о сущностях.
+# При реализации используйте максимально возможное
+# количество паттернов проектирования.
+
+class LibraryApp:
+    @staticmethod
+    def init():
+        Library.init()
+        Book.init()
+
+class Human:
+    def __init__(self,name:str,snils:int,year:int):
+        self.name = name
+        self.snils = snils
+        self.year = year
+
+class Librarian(Human):
+    pass
+
+class Reader(Human):
+    pass
+
+class Book:
+    idbn = 0
+    def __init__(self,author:str,title:str,year:int,taked=False,card=None):
+        self.author = author
+        self.title = title
+        self.year = year
+        self.card = card if card else []
+        self.taked = taked
+        Book.idbn += 1
+        self.idbn = Book.idbn
+        Book.save()
+    def take(self,reader:Reader,librarian:Librarian):
+        self.taked = True
+        self.card.append({
+            'reader' : reader,
+            'librarian' : librarian,
+            'returnBefore':datetime.datetime.now() + datetime.timedelta(days=7) ,
+            'returned': None
+            })
+        Library.save(self)
+    def getBack(self):
+        self.taked = False
+        self.card[-1]['returned'] = datetime.datetime.now()    
+        Library.save(self)
+    def init():
+        with open('idbn.pickle','rb') as f:
+            Book.idbn = pickle.load(f)
+    def save():
+        with open('idbn.pickle','rb') as f:
+            pickle.dump(Book.idbn,f)
+
+class Library:
+    _books:List[Book] = []
+    _librarians:List[Librarian] = []
+    _readers:List[Reader] = []
+
+    @staticmethod
+    def init():
+        arr = ['books','readers','librarians']
+        for el in arr:
+            with open(el + '.pickle','rb') as f:
+                Library.__dict__['_'+el].extend(pickle.load(f))
+
+    @staticmethod
+    def save(el:Book|Human):
+        name = el.__class__.__name__.lower()
+        with open(name + 's.pickle','wb') as f:
+            pickle.dump(Library.__dict__['_'+name+'s'], f)
+        
+    @staticmethod
+    def add(el:Book|Human):
+        name = el.__class__.__name__.lower() 
+        Library.__dict__['_'+name+'s'].append(el)
+        Library.save(el)
+
+    @staticmethod
+    def remove(el:Book|Human):
+        name = el.__class__.__name__.lower()
+        Library.__dict__['_'+name+'s'].remove(el)
+        Library.save(el)
+        
+                
+                
+
+# book = Book('a','b',2011)
+# Library.add(book)
+# Library.save(book)
+# book = Librarian('lla',123,2011)
+# Library.add(book)
+# Library.save(book)
+# book = Reader('all',321,2011)  
+# Library.add(book)
+# Library.save(book)
+Library.init()
+# book = Book('ab','bc',2010)
+# Library.add(book)
+# book.take(Library.__dict__['_readers'][0],Library.__dict__['_librarians'][0])
